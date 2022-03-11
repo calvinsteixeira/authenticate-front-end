@@ -1,5 +1,3 @@
-
-
 const loginForm = document.querySelector('#loginForm')
 
 // CONVERTE TODOS OS VALORES DOS INPUTS DE UM FORM RETORNANDO UM OBJETO JSON
@@ -14,12 +12,12 @@ loginForm.addEventListener('submit', e => {
   const formValues = handleSubmitForm(e)
 
   // POST PARA O BFF NA ROTA DE AUTENTICAÇÃO
-  axios.post('/auth', {
+  axios.post('/login', {
     username: formValues.username,
     password: formValues.password
+  }).then(res => {
+    console.log(res);
+  }).catch(err => {
+    console.log(err);
   })
-
-  axios.get('http://localhost:3000/get-user').then(res => console.log(res))
 })
-
-
