@@ -11,8 +11,8 @@ module.exports = function (router) {
     res.render('pages/index')
   })
 
-  // AUTH ROUTES
-  router.post('/auth', async (req, res) => {
+  // ROTA DE LOGIN
+  router.post('/login', async (req, res) => {
     const credentials = req.body
     const response = await authController.login(credentials)
   })
